@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+			Atharva Deshpande | S20190010043
+	</title>
+	<link href="Tut2.css" rel="stylesheet"> <!-- Observe -->
+	<meta charset="utf-8">
+</head>
+<body>	
+	<div class="content">
+	<center>
+		<script>
+			//var client_name = prompt('Enter your name!');
+			//alert("Welcome "+client_name+" to the WAD course!");
+			//------------------Objects---------------------------
+			var subj = {sub1:"WAD", sub2:"ML", sub3:"AI",sub4:"TOC", sub5:"CCN", sub6:"CS-4"};
+			
+			function fun4Obj(){
+				document.getElementById("subobj").innerHTML = "The Subjects of Current Semester through Objects are: "+subj.sub1+", "+subj.sub2+", "+subj.sub3+", "+subj.sub4+", "+subj.sub5+" and "+subj.sub6+".";
+			}
+			//------------------Array----------
+			var aset = ["WAD", " ML", " AI"];
+			var tos = [" TOC", " CCN", " CS-4"]
+			var naset = aset.concat(tos);
+			function fun4Arr(){
+				document.getElementById("subobj").innerHTML = "The Subjects of Current Semester through Arrays are: "+naset+".";
+			}
+			//-----------Table Add Row and Delete-------
+			
+			function addRo(tblId) {
+				var empTab = document.getElementById(tblId);
+				var rowCnt = empTab.rows.length;        // GET TABLE ROW COUNT.
+				var tr = empTab.insertRow(rowCnt);      // TABLE ROW.
+				var tdid = "textBox" + (rowCnt-5);
+				var bid = "button"+ (rowCnt-5);
+				var tdb = document.createElement('td'); 
+				tdb = tr.insertCell(0);
+				var eleb = document.createElement('button');
+				eleb.setAttribute("id",bid);
+				eleb.innerHTML="Group Member";
+				//eleb.onclick=function(){alert("yes")};
+				eleb.style.margin = "0px 0px 0px 83px";
+				tdb.appendChild(eleb);
+				var td = document.createElement('td');          // TABLE DEFINITION.
+				td = tr.insertCell(1);
+				var ele = document.createElement('input');
+				ele.setAttribute("id", tdid);
+		    	td.appendChild(ele);  
+				td.addEventListener('keydown', ({key}) => {
+					if (key === "Enter"){ 
+						var output = document.getElementById(tdid);
+						//alert(output.value);
+						tr.deleteCell(1);
+						td=tr.insertCell(1);
+						td.style="text-align: center;"
+						var ele = document.createElement('p');
+						ele.setAttribute("id", tdid);
+						//ele.innerHTML=output.value;
+						ele.style="margin: -8px;";
+						td.appendChild(ele); 
+						eleb.onclick=function(){showName(tdid,output)};
+						tdb.appendChild(eleb);
+					}
+				});
+				function showName(tdid,output)
+				{
+					document.getElementById(tdid).innerHTML=output.value;
+				}
+			}
+			function deleterow(tblId)
+			{
+				var table = document.getElementById(tblId);
+				var row = table.getElementsByTagName('tr');
+				var rowCountt = table.rows.length;
+				if(row.length!='6'){
+					table.deleteRow(rowCountt-1);  
+				}
+			}
+		</script>
+		<hr>
+		<h1 style="color:red"> Atharva Yogesh Deshpande </h1>
+		<h2 style="color:blue"> Group No. 26 </h2>
+		<hr>
+		<img src="https://wonderfulengineering.com/wp-content/uploads/2016/01/nature-wallpapers-31.jpg" width="920" height="408">
+		<hr>
+		<strong style="font-size: 20px;padding: 2px;">Table from Tutorial - 1</strong>
+		<table style="margin-top: 2px;">
+			<th style="text-align: center;background-color: pink;"> Group no. </th>
+			<th style="text-align: center;background-color: pink;"> Name </th>
+			<th style="text-align: center;background-color: pink;"> Roll no. </th>
+			<th style="text-align: center;background-color: pink;"> Email </th>
+			<th style="text-align: center;background-color: pink;"> Leader Name </th>
+			<th style="text-align: center;background-color: pink;"> Proposed Topic </th>
+			<th style="text-align: center;background-color: pink;"> Role </th>
+			<tr> 
+				<td> 26 </td>
+				<td> Atharva Deshpande </td>
+				<td> S20190010043 </td>
+				<td> atharvayogesh.d19@iiits.in </td>
+				<td> Atharva Deshpande </td>
+				<td> Online exams management system </td>
+				<td> Front-End </td>
+			</tr>
+			<tr> 
+				<td> 26 </td>
+				<td> Chetan Oruganti </td>
+				<td> S20190010129 </td>
+				<td> chetanreddy.o19@iiits.in </td>
+				<td> Atharva Deshpande </td>
+				<td> Canteen food ordering system </td>
+				<td> Back-End </td>
+			</tr>
+			<tr> 
+				<td> 26 </td>
+				<td> Bhargav Pendalya </td>
+				<td> S20190010017 </td>
+				<td> bharghavsai.p19@iiits.in </td>
+				<td> Atharva Deshpande </td>
+				<td> College social network project </td>
+				<td> Front-End </td>
+			</tr>
+			<tr> 
+				<td> 26 </td>
+				<td> Snehith Kanikella </td>
+				<td> S20190010085 </td>
+				<td> snehith.k19@iiits.in </td>
+				<td> Atharva Deshpande </td>
+				<td> Advanced Intelligent tourist guide </td>
+				<td> Front-End </td>
+			</tr>
+			<tr> 
+				<td> 26 </td>
+				<td> Varshith Kaki </td>
+				<td> S20190010076 </td>
+				<td> vishnusaivarshith.k19@iiits.in </td>
+				<td> Atharva Deshpande </td>
+				<td> Bus monitoring application in IIITS </td>
+				<td> Full Stack </td>
+			</tr>
+		<table>
+		<hr>
+		<img src="https://media-exp1.licdn.com/dms/image/C4D03AQFt-qExdwAwoA/profile-displayphoto-shrink_200_200/0/1610386646606?e=1616025600&v=beta&t=TTTFFbDrJj7Sa8yfedATY6lID1eKIWJICi-WHGhA-Yg" width="408" height="402" usemap="#myprofile">
+		<map name="myprofile">
+		<area shape="rect" coords="10,10,180,200" href="https://www.linkedin.com/in/atharva-deshpande-7a2765191/" target="_blank">
+		<area shape="rect" coords="200,10,404,200" href="https://github.com/atharva01903" target="_blank"> 
+		<area shape="rect" coords="10,200,400,395" href="http://www.iiits.ac.in/" target="_blank">
+		</map>
+		<p style="font-size:21px">Maps are confined in the above image such that : </p>
+		<ul style="font-size:18px">
+			<li><strong>Top-left</strong> directs you to my LinkedIn Profile.</li>
+			<li><strong>Top-Right</strong> directs you to my Github Profile.</li>
+			<li><strong>Bottom part</strong> directs you to the website of <a href="http://www.iiits.ac.in/" target="_blank">IIIT Sri City</a>.</li>
+		</ul>
+		<hr>
+		<ul style="font-size:18px;width: 49%;margin-bottom:6px;"">
+			<li>Click on the left to read all subjects of current semester through object.</li>
+			<li>Click on the right to read all subjects of current semester through array.</li>
+		</ul>
+		<button type="button" onclick="fun4Obj()" style="margin-right: 8px;margin-bottom: 4px;">OBJECT</button>
+		<button type="button" onclick="fun4Arr()" style="margin-bottom: 4px;">ARRAY</button>
+		<br>
+		<strong id="subobj"></strong>
+		<hr>
+		<strong style="font-size: 20px;padding: 2px;">Table from Tutorial - 2</strong>
+		<table style="margin-top: 2px;width:50%;table-layout: fixed;">
+		<tbody id="empTable">
+			<th style="text-align: center;background-color: pink;"> Designation </th>
+			<th style="text-align: center;background-color: pink;"> Name </th>
+			<tr> 
+				<td style="text-align: center;"> <button type="button" onclick='document.getElementById("lname").innerHTML="Atharva Deshpande"' style="font-size: 14px;"> Leader Name </button> </td>
+				<td style="text-align: center;"> <p id="lname" style="margin: -8px;"></p> </td>
+			</tr>
+			<tr> 
+				<td style="text-align: center;"> <button type="button" onclick='document.getElementById("m1").innerHTML="Varshith Kaki"'> Group Member </button> </td>
+				<td style="text-align: center;"> <p id="m1" style="margin: -8px;"></p> </td>
+			</tr>
+			<tr> 
+				<td style="text-align: center;"> <button type="button" onclick='document.getElementById("m2").innerHTML="Bhargav Pendalya"'> Group Member </button> </td>
+				<td style="text-align: center;"> <p id="m2" style="margin: -8px;"></p> </td>
+			</tr>
+			<tr> 
+				<td style="text-align: center;"> <button type="button" onclick='document.getElementById("m3").innerHTML="Chetan Oruganti"'> Group Member </button> </td>
+				<td style="text-align: center;"> <p id="m3" style="margin: -8px;"></p> </td>
+			</tr>
+			<tr> 
+				<td style="text-align: center;"> <button type="button" onclick='document.getElementById("m4").innerHTML="Snehith Kanikella"'> Group Member </button> </td>
+				<td style="text-align: center;"> <p id="m4" style="margin: -8px;"></p> </td>
+			</tr>
+		</tbody>
+		<table>
+		<button type="button" style="margin: 8px 8px 0px 36px;" onclick="addRo('empTable')"> ADD ROW </button>
+		<button type="button" style="margin: 8px 8px 0px 0px;" onclick="deleterow('empTable')"> REMOVE ROW </button>
+		<hr>
+	<center>
+	</div>
+</body>
+<html>
