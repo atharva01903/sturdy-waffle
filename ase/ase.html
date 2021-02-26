@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!-- Start html here -->
+<html>
+<!-- Start head here -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<head>
+<title>WAD Course</title>
+<!--
+<style>
+table,th,td {
+  border: 1px solid black;
+  border-collapse: collapse;/*comment this line for enabling double borders*/
+}
+</style>
+-->
+<link href="/home/atharva/WebDev/ase/CSSFiles/a.css" rel="stylesheet"> <!-- Observe -->
+<meta charset="utf-8">
+</head>
+<body style="background-color: orange;"> <!--#ae6cbb for pink-->
+<center>
+<div class="as">
+<p>Welcome to JS and CSS tutorial</p>
+<b><p id="multi"></p></b>
+<b><p id="muls"></p></b>
+<b><p id="subobj"></p></b>
+<b><p id="darr"></p></b>
+
+<button type="button" onclick="multiplyz()">Click me</button>
+<p id="multiply"></p>
+</div>
+<h1 id="cgc">UG2 IIIT Sri City</h1>
+<button type="button" onclick='document.getElementById("cgc").innerHTML="Welcome to ASE Track"'>Change</button>
+<button type="button" onclick="myFunc()">Reset</button>
+<p id="dayhr"></p>
+<p id="bol"></p>
+<p>Enter your phone number</p>
+<form>
+<input id="phone">
+<button type="button" onclick="chkph(document.getElementById('phone'))">Check</button>
+</form>
+<form>
+    <input id="myInput" type="text">
+</form>
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+<!-- For hiding form https://www.w3schools.com/code/tryit.asp?filename=GN3N466E2NAD -->
+<!---Table Starts Here ----------------------->
+
+    
+<table><tbody id="empTable" contenteditable>
+  <tr>
+    <td rowspan="2"><b>Title of Project</b></td>
+    <td rowspan="2"><b>Sponsoring Agency</b></td>
+    <td colspan="2"><b><center>Period</center></b></td>
+    <td rowspan="2"><b><center>Duration in Years</center></b></td>
+    <td rowspan="2"><b>Project Sanctioned Amount in INR</b></td>
+    <td rowspan="2"><b><center>Status (Completed / Ongoing)</center></b></td>
+    <td rowspan="2"><b>PI/Co - PI</b></td>
+    <td rowspan="2"><b>No. of Co-PIs including PI</b></td>
+  </tr>
+  <tr>
+    <td><b><center>From</center></b></td>
+    <td><b><center>To</center></b></td>
+  </tr>
+
+  <tr>
+    <td><input name="empTable1" id="empTable1" type="text" value=""/></td>
+    <td><input name="empTable2" id="empTable2" type="text" value=""/></td>
+    <td><input name="empTable3" id="empTable3" type="text" value=""/></td>
+    <td><input name="empTable4" id="empTable4" type="text" value=""/></td>
+    <td><input name="empTable5" id="empTable5" type="text" value=""/></td>
+    <td><input name="empTable6" id="empTable6" type="text" value=""/></td>
+    <td><input name="empTable7" id="empTable7" type="text" value=""/></td>
+    <td><input name="empTable8" id="empTable8" type="text" value=""/></td>
+    <td><input name="empTable9" id="empTable9" type="text" value=""/></td>
+  </tr>
+</tbody></table>
+        <input type="button" value="Add New Row" onclick="addRo('empTable')" />
+	<input type="button" value="Remove Last One" onclick="deleterow('empTable')"/>
+
+<script>
+
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("form").hide();
+  });
+  $("#show").click(function(){
+    $("form").show();
+  });
+});
+var input = document.getElementById("myInput");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("hide").click();
+  }
+});
+//-----------Table Add Row and Delete-------
+var c = 0;
+    function addRo(tblId) {
+        var empTab = document.getElementById(tblId);
+	var rowCnt = empTab.rows.length;        // GET TABLE ROW COUNT.
+        var tr = empTab.insertRow(rowCnt);      // TABLE ROW.
+	
+        for (var c = 0; c < 9; c++) {
+            var td = document.createElement('td');          // TABLE DEFINITION.
+            td = tr.insertCell(c);
+                var ele = document.createElement('input');
+
+                td.appendChild(ele);            
+        }
+			
+    }
+
+
+
+    function deleterow(tblId)
+    {
+      var table = document.getElementById(tblId);
+      var row = table.getElementsByTagName('tr');
+	var rowCountt = table.rows.length;
+	
+      		if(row.length!='3'){
+
+					table.deleteRow(rowCountt-1);  
+            			}
+    }
+
+//------------------
+
+
+var x=12;
+var y=5;
+var z=x*y;
+document.getElementById("multi").innerHTML="The multiplication value is "+z;
+// using function
+function Mulsv(x,y){
+	return x*y;
+}
+document.getElementById("muls").innerHTML="The result is "+Mulsv(10,5);
+// objects
+var subj = {subn:"WAD",sem:"Fourth",dept:"CSE"};
+document.getElementById("subobj").innerHTML="ASE Track starts with "+subj.subn+" in "+subj.sem+" semester of "+subj.dept+".";
+// arrays
+var aset = ["WAD","SOAD","EAD"];
+var tos=["Fourth","Fifth","Six"];
+var naset=tos.concat(aset);
+//document.getElementById("darr").innerHTML="ASE Track starts with "+aset[0]+" in "+aset[1]+" semester of "+aset[2]+".";
+document.getElementById("darr").innerHTML=naset;
+// Change content
+function multiplyz() {
+  document.getElementById("multiply").innerHTML = "The product of 10 and 5 is "+Mulsv(10,5);
+}
+function myFunc(){
+	var str="IIIT Sri City";
+	var result=str.link("http://www.iiits.ac.in/");
+	document.getElementById("cgc").innerHTML = "UG2 "+result;
+}
+if(new Date().getHours()<10){
+	document.getElementById("dayhr").innerHTML = "Good Morning";
+}
+else if(new Date().getHours()<15){
+	document.getElementById("dayhr").innerHTML = "Good Afternoon";
+}
+else if(new Date().getHours()<20){
+	document.getElementById("dayhr").innerHTML = "Good Evening";
+}
+else{
+	document.getElementById("dayhr").innerHTML = "Good Night";
+}
+
+//var now= new Date();
+//alert(now);
+// Boolean 
+document.getElementById("bol").innerHTML = "Is 10<9?: "+Boolean(10<9);
+var re = /(?:\d{3}|\(\d{3}\))([-\/\.])\d{3}([-\/\.])\d{4}/;
+function chkph(phoneInput){
+	var OK = re.exec(phoneInput.value);
+	if(!OK){
+		alert(phoneInput.value+ ' isn\'t a phone number with area code!');
+	}
+	else{
+		alert('Thanks, your phone number is '+OK[0]);
+	}
+}	
+</script>
+<h1>UG2 <a href="http://www.iiits.ac.in/" target="_blank">IIIT Sri City</a></h1>
+<h2>UG2 IIIT Sri City</h2>
+<h2>ASE-WAD Course</h2>
+<h3>UG2 IIIT Sri City</h3>
+<h4>UG2 IIIT Sri City</h4>
+UG2 IIIT Sri City
+<hr>
+<p><b>Welcome to <i>WAD</i> course of <mark>ASE</mark> Track</b></p>
+<p style="color:green;">IIIT SriCity</p>
+<img src="/home/atharva/WebDev/ase/images/new-banner3.jpg" width="920" height="350">  <!-- Observe -->
+<hr>
+<p><b>Elements: </b>h1,h2,h3,h4 ... p... </p>
+<p><b>Attributes: </b>href,src.... </p>
+<p>My cat is very grumpy.</p>
+<hr>
+<strong>Important<sub>Stuff</sub> IIIT<sup>Sri City</sup></strong><br>
+<del>Important Stuff</del>
+<table>
+	<tr>
+		<th> GroupID </th>
+		<th> Name 1</th>
+		<th> Name 2</th>
+		<th> Name 3</th>
+		<th> Name 4</th>
+		<th> Name 5</th>
+	</tr>
+	<tr>
+		<td> 1 </td>
+		<td> Romy </td>
+		<td> Peter </td>
+		<td> Savin </td>
+		<td> Ramesh </td>
+		<td> Suresh </td>
+	</tr>
+	<tr>
+		<td> 2 </td>
+		<td> Zubair </td>
+		<td> Shashank </td>
+		<td> Neel </td>
+		<td> Savio</td>
+		<td> Vinod </td>
+	</tr>
+	<tr>
+		<td> 3 </td>
+		<td> Virat </td>
+		<td> Sachin </td>
+		<td> Surya </td>
+		<td> Mahendra </td>
+		<td> Gajnedra </td>
+	</tr>
+</table>
+</center>
+<hr>
+<!-- Start List here-->
+<ul>
+<li>This is one.</li>
+<li>This is two.</li>
+<li>This is three.</li>
+</ul>
+<center>
+<hr>
+<iframe src="http://www.iiits.ac.in/" height = "320" width = "720" title="WADIFrame"></iframe>
+</center>
+<hr>
+<img src="http://www.iiits.ac.in/iiits-content/uploads/2020/05/uba12.jpeg" height = "350" width = "720" usemap="#iiits">
+
+<map name="iiits">
+<area shape="rect" coords="1,1,240,340" href="http://www.iiits.ac.in/" target="_blank">
+<area shape="rect" coords="300,100,700,340" href="http://www.entrepreneur.com/magazine" target="_blank">
+</map>
+
+</body>
+</html>
