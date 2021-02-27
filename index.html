@@ -46,7 +46,9 @@
 				td = tr.insertCell(1);
 				var ele = document.createElement('input');
 				ele.setAttribute("id", tdid);
+				ele.placeholder="Enter Group Member";
 		    	td.appendChild(ele);  
+				td.style="text-align:center;";
 				td.addEventListener('keydown', ({key}) => {
 					if (key === "Enter"){ 
 						var output = document.getElementById(tdid);
@@ -61,6 +63,7 @@
 						td.appendChild(ele); 
 						eleb.onclick=function(){showName(tdid,output)};
 						tdb.appendChild(eleb);
+						tdb.style="align:center;";
 					}
 				});
 				function showName(tdid,output)
@@ -162,6 +165,11 @@
 		<br>
 		<strong id="subobj"></strong>
 		<hr>
+		<blockquote>
+			For the uninitiated, the following table is a learning exercise assigned to us where we were supposed to create a table such that the button in the left column displays the name of each group member in the right column.
+			<br>Will keep updating this webpage as I learn new things.
+			<span>Atharva Deshpande</span>
+		</blockquote>
 		<strong style="font-size: 20px;padding: 2px;">Table from Tutorial - 2</strong>
 		<table style="margin-top: 2px;width:50%;table-layout: fixed;">
 		<tbody id="empTable">
