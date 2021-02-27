@@ -5,4 +5,4 @@
 - I'll try to update this repo as frequently as possible. 
 - If you can make this look simpler to understand do drop a PR. These are one of my genuine efforts to make learning easier for everyone.
 
-I'll be adding django-projects soon as I finish my first project.
+I'll be adding django-projects as soon as I finish my first project on Django.
