@@ -1,0 +1,6 @@
+Create a HTML page with an external css file. The HTML file should contain:
+1) Title should be your name and Roll No
+2) Top of the Page write your name and Group number using different headings and css
+3) There should be an image with 920(w)*408(h)
+4) Include a table with your WAD project group details where you mention, group no, name, roll no, email, leader name, proposed topic name, your role
+5) At the end create a map with at least three information(your Fb/linkin/github, IIITS website). 
