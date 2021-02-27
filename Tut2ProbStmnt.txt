@@ -1,0 +1,5 @@
+Please continue with tutorial 1 and add the following component using JS:
+1) Include an alertbox with your name writing "Welcome "yourname" to WAD course"
+2) Using button Display the group members name and also mention who is leader; when someone click the button their name should display(only display one at a time)
+3) Include add and remove row feature in the table that you created in the previous tutorial.
+4) Display the all subjects of current semester through object and array.
